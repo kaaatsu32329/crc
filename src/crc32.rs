@@ -5,7 +5,7 @@ const BYTE_SIZE: u32 = 8;
 
 #[derive(Debug, Clone, Copy)]
 pub struct CRC32 {
-    table: [u32; TABLE_SIZE as usize],
+    pub table: [u32; TABLE_SIZE as usize],
 }
 
 impl CRC32 {
@@ -45,6 +45,8 @@ impl CRC for CRC32 {
 
 impl Default for CRC32 {
     fn default() -> Self {
-        Self::new()
+        let mut default = Self::new();
+        default.make_table();
+        default
     }
 }

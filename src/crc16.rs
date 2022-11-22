@@ -45,6 +45,8 @@ impl CRC for CRC16 {
 
 impl Default for CRC16 {
     fn default() -> Self {
-        Self::new()
+        let mut default = Self::new();
+        default.make_table();
+        default
     }
 }

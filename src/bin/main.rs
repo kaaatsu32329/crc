@@ -1,10 +1,6 @@
-pub mod crc;
-pub mod crc16;
-pub mod crc32;
-
-use crate::crc::CRC;
-use crate::crc16::CRC16;
-use crate::crc32::CRC32;
+use crc::crc::CRC;
+use crc::crc16::CRC16;
+use crc::crc32::CRC32;
 
 fn main() {
     let buf = "123456789";
